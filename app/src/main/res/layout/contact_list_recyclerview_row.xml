@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_ripple"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:cardCornerRadius="25dp">
+
+        <ImageView
+            android:id="@+id/contact_list_ImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+    </android.support.design.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/contact_list_fullNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:padding="5dp"
+        android:textSize="17dp"
+        tools:text="@tools:sample/lorem" />
+
+</LinearLayout>

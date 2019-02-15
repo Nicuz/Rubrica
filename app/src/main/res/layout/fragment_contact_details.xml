@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_contact_details"
+        layout="@layout/toolbar_contact_details" />
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp">
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Controller.ContactDetailsFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="75dp"
+                    app:cardElevation="30dp">
+
+                    <ImageView
+                        android:id="@+id/contact_details_contact_photo"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@tools:sample/avatars" />
+
+                </android.support.design.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/contact_details_fullNameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="@{}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                <!-- Header personal info -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/contact_details_personalInfoHeader"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/contact_details_phone_numbers_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.993"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/contact_details_phone_numbers_recyclerview_row" />
+
+                <!-- Email -->
+                <LinearLayout
+                    android:id="@+id/contact_details_email_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/contact_details_email_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        tools:src="@drawable/ic_email_accent" />
+
+                    <TextView
+                        android:id="@+id/contact_details_email_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        tools:text="@tools:sample/lorem" />
+                </LinearLayout>
+
+                <!-- Company -->
+                <LinearLayout
+                    android:id="@+id/contact_details_company_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/contact_details_company_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        tools:src="@drawable/ic_work_accent" />
+
+                    <TextView
+                        android:id="@+id/contact_details_company_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        tools:text="@tools:sample/lorem" />
+                </LinearLayout>
+
+                <!-- Address -->
+                <LinearLayout
+                    android:id="@+id/contact_details_address_linearlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/contact_details_address_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        tools:src="@drawable/ic_location_accent" />
+
+                    <TextView
+                        android:id="@+id/contact_details_address_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        tools:text="@tools:sample/lorem" />
+                </LinearLayout>
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="30dp">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/contact_details_mapview"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:visibility="gone"></com.google.android.gms.maps.MapView>
+                </android.support.design.card.MaterialCardView>
+
+                <!-- Header Business card -->
+                <TextView
+                    android:id="@+id/contact_details_header_businessCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/contact_details_businessCardHeader"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="30dp">
+
+                    <ImageView
+                        android:id="@+id/contact_details_businessCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@tools:sample/avatars" />
+
+                </android.support.design.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </android.support.design.card.MaterialCardView>
+
+</LinearLayout>
+
+
+

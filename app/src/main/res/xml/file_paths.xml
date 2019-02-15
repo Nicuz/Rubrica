@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="Rubrica_images" fullpath="Android/data/com.nicuz.rubrica/files/Pictures" />
+    <cache-path name="vcard" path="/" />
+</paths>

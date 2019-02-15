@@ -1,0 +1,63 @@
+<resources>
+    <!-- Main toolbar -->
+    <string name="app_name">Rubrica</string>
+
+    <!-- Toolbar with search bar -->
+    <string name="search_bar_placeholder">Search a contact</string>
+
+    <!-- Contact List Fragment -->
+    <string name="contact_list_emptyDatabase">No contact to show, start adding one now 💪🏻</string>
+    <string name="contact_list_noContactFound️">No contact found ☹️</string>
+
+    <!-- Contact Details Fragment -->
+    <string name="contact_details_shareTitle">Share vCard using</string>
+    <string name="contact_details_dialog_deleteContact">Do you really want to delete this contact?</string>
+    <string name="contact_details_toast_contactDeleted">Contact deleted</string>
+    <string name="contact_details_personalInfoHeader">Personal info</string>
+    <string-array name="phoneType">
+        <item>Mobile</item>
+        <item>Work</item>
+        <item>Home</item>
+        <item>Main</item>
+        <item>Other</item>
+    </string-array>
+    <string name="contact_details_businessCardHeader">Business card</string>
+
+    <!-- Add Contact Fragment -->
+    <string name="add_contact_toast_contactSaved">Contact saved</string>
+    <string name="add_contact_toast_contactAlreadyExists">This contact already exists</string>
+
+    <!-- Edit Contact Fragment -->
+    <string name="edit_contact_toast_contactUpdated">Contact updated</string>
+
+    <!-- Contact add/edit form -->
+    <string name="contact_form_choosePhotoBtn">Choose photo</string>
+    <string name="contact_form_personalInfoHeader">Personal info</string>
+    <string name="contact_form_textfield_firstName">First Name</string>
+    <string name="contact_form_textfield_lastName">Last Name</string>
+    <string name="contact_form_textfield_phoneNumber">Phone number</string>
+    <string name="contact_form_addPhoneNumberBtn">Add phone number</string>
+    <string name="contact_form_textfield_email">Email</string>
+    <string name="contact_form_textfield_company">Company</string>
+    <string name="contact_form_textfield_address">Address</string>
+    <string name="contact_form_businessCardHeader">Business card</string>
+    <string name="contact_form_chooseBusinessCardBtn">Choose photo</string>
+    <string name="contact_form_required_error">Required</string>
+    <string name="contact_form_invalidEmail">Invalid email</string>
+
+    <!-- Permissions dialog -->
+    <string name="permissions_dialog_title">Permission needed</string>
+    <string name="permissions_dialog_message">
+        Rubrica asks for camera and storage permission to let the user choose or take a photo for new contacts
+    </string>
+    <string name="permissions_dialog_positiveButton">I got it</string>
+
+    <!-- Alert set photo -->
+    <string name="alert_set_photo_title">Add photo</string>
+    <string name="alert_set_photo_item_takePhoto">Take photo</string>
+    <string name="alert_set_photo_item_chooseFromGallery">Choose from gallery</string>
+    <string name="alert_change_photo_title">Change photo</string>
+    <string name="alert_change_photo_item_removePhoto">Remove photo</string>
+
+
+</resources>

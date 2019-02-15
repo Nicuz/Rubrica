@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_edit_contact"
+        layout="@layout/toolbar_edit_contact" />
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp">
+
+        <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Controller.ContactDetailsFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Contact photo -->
+
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="100dp"
+                    app:cardElevation="30dp">
+
+                    <ImageView
+                        android:id="@+id/edit_contact_ImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/ic_account_circle_accent" />
+
+                </android.support.design.card.MaterialCardView>
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/edit_contact_choosePhotoBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/MaterialButton_background"
+                    android:stateListAnimator="@null"
+                    android:text="@string/contact_form_choosePhotoBtn"
+                    android:textColor="@color/colorAccent"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/ic_camera_primary_light"
+                    app:iconTint="@color/colorAccent" />
+
+                <!-- Header personal info -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/contact_form_personalInfoHeader"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+                <!-- First name and Last name -->
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/edit_contact__account_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        tools:src="@drawable/ic_account_circle_accent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_contact_firstNameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:hint="@string/contact_form_textfield_firstName">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/edit_contact_firstNameLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_contact_lastNameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:hint="@string/contact_form_textfield_lastName">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/edit_contact_lastNameLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:maxLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <include layout="@layout/phone_numbers_recyclerview_row" />
+
+                <!-- Phone numbers -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/edit_contact_recyclerview_phoneNumbersList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/phone_numbers_recyclerview_row"></android.support.v7.widget.RecyclerView>
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/edit_contact_addPhoneBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/MaterialButton_background"
+                    android:stateListAnimator="@null"
+                    android:text="@string/contact_form_addPhoneNumberBtn"
+                    android:textColor="@color/colorAccent"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/ic_add_white"
+                    app:iconTint="@color/colorAccent" />
+
+                <!-- Email -->
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/contact_details_email_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        tools:src="@drawable/ic_email_accent" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/edit_contact_emailLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/contact_form_textfield_email">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_contact_emailLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Company -->
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/edit_contact_company_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        tools:src="@drawable/ic_work_accent" />
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/contact_form_textfield_company">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_contact_companyLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <!-- Address -->
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/edit_contact_location_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        tools:src="@drawable/ic_location_accent" />
+
+                    <android.support.design.widget.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="@string/contact_form_textfield_address">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/edit_contact_addressLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1" />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+
+                <!-- Header personal info -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/contact_form_businessCardHeader"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+                <!-- Business card image -->
+                <android.support.design.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="30dp">
+
+                    <ImageView
+                        android:id="@+id/edit_contact_businessCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        tools:src="@drawable/ic_work_accent" />
+
+                </android.support.design.card.MaterialCardView>
+
+                <android.support.design.button.MaterialButton
+                    android:id="@+id/edit_contact_chooseBusinessCardBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/MaterialButton_background"
+                    android:stateListAnimator="@null"
+                    android:text="@string/contact_form_chooseBusinessCardBtn"
+                    android:textColor="@color/colorAccent"
+                    app:cornerRadius="100dp"
+                    app:icon="@drawable/ic_camera_primary_light"
+                    app:iconTint="@color/colorAccent" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.card.MaterialCardView>
+</LinearLayout>
